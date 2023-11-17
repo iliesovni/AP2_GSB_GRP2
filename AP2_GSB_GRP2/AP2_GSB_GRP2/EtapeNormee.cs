@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace AP2_GSB_GRP2
 {
-    internal class EtapeNormee
+    internal class EtapeNormee : Etape
     {
         // attributs de la classe
         private int etp_norme;
         private string etp_date_norme;
 
         // constructeur
-        public Etape(int laNorme, string ladateNorme)
+        public Etape(int laNorme, string ladateNorme) : base(leNum, leLibelle)
         {
             this.etp_norme = laNorme;
             this.etp_date_norme = ladateNorme;
