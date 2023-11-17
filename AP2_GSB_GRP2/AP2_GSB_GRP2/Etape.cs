@@ -18,5 +18,17 @@ namespace AP2_GSB_GRP2
             this.etp_num = leNum;
             this.etp_libelle = leLibelle;
         }
+
+        // Mutateurs, Accesseurs
+
+        public int getLeNumEtape()
+        {
+            return this.etp_num;
+        }
+
+        public string getLeLibelleEtape()
+        {
+            return this.etp_libelle;
+        }
     }
 }
