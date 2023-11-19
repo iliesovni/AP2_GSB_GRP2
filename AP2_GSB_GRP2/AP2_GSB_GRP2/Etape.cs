@@ -30,5 +30,15 @@ namespace AP2_GSB_GRP2
         {
             return this.etp_libelle;
         }
+
+        public void setLeNumEtape(int leNumEtape)
+        {
+            this.etp_num = leNumEtape;
+        }
+
+        public void setLeLibelleEtape(string leLibelleEtape)
+        {
+            this.etp_libelle = leLibelleEtape;
+        }
     }
 }
