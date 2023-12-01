@@ -13,7 +13,7 @@ namespace AP2_GSB_GRP2
         private string etp_date_norme;
 
         // constructeur
-        public Etape(int laNorme, string ladateNorme)
+        public EtapeNormee(int laNorme, string ladateNorme)
         {
             this.etp_norme = laNorme;
             this.etp_date_norme = ladateNorme;
