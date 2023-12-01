@@ -39,6 +39,7 @@
             this.CH_IdDecision_LV_EtapeValidation = new System.Windows.Forms.ColumnHeader();
             this.label1 = new System.Windows.Forms.Label();
             this.BTN_Quitter = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PB_LogoValidation)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,12 +125,24 @@
             this.BTN_Quitter.Text = "Quitter";
             this.BTN_Quitter.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(274, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(517, 42);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Médicaments en cours de validation";
+            // 
             // MedicamentsEnCoursDeValidation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(974, 531);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BTN_Quitter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.LV_Etape_Validation);
@@ -156,5 +169,6 @@
         private ColumnHeader CH_IdDecision_LV_EtapeValidation;
         private Label label1;
         private Button BTN_Quitter;
+        private Label label2;
     }
 }
