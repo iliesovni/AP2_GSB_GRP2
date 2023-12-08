@@ -33,13 +33,20 @@
             this.LV_Famille_Autorises = new System.Windows.Forms.ListView();
             this.LV_Medicaments_Autorises = new System.Windows.Forms.ListView();
             this.BTN_Quitter = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CH_CodeFamille = new System.Windows.Forms.ColumnHeader();
+            this.CH_NomFamille = new System.Windows.Forms.ColumnHeader();
+            this.CH_NbMedoc = new System.Windows.Forms.ColumnHeader();
+            this.CH_DepotLegal = new System.Windows.Forms.ColumnHeader();
+            this.CH_NomCommerce = new System.Windows.Forms.ColumnHeader();
+            this.CH_CodeFamilleMedoc = new System.Windows.Forms.ColumnHeader();
             ((System.ComponentModel.ISupportInitialize)(this.PB_LogoAutorises)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // PB_LogoAutorises
             // 
             this.PB_LogoAutorises.Location = new System.Drawing.Point(-1, 0);
-            this.PB_LogoAutorises.Name = "pictureBox1";
+            this.PB_LogoAutorises.Name = "PB_LogoAutorises";
             this.PB_LogoAutorises.Size = new System.Drawing.Size(161, 105);
             this.PB_LogoAutorises.TabIndex = 0;
             this.PB_LogoAutorises.TabStop = false;
@@ -55,6 +62,10 @@
             // 
             // LV_Famille_Autorises
             // 
+            this.LV_Famille_Autorises.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CH_CodeFamille,
+            this.CH_NomFamille,
+            this.CH_NbMedoc});
             this.LV_Famille_Autorises.Location = new System.Drawing.Point(46, 138);
             this.LV_Famille_Autorises.MultiSelect = false;
             this.LV_Famille_Autorises.Name = "LV_Famille_Autorises";
@@ -64,22 +75,69 @@
             this.LV_Famille_Autorises.View = System.Windows.Forms.View.Details;
             this.LV_Famille_Autorises.SelectedIndexChanged += new System.EventHandler(this.LV_Famille_Autorises_SelectedIndexChanged);
             // 
-            // listView3
+            // LV_Medicaments_Autorises
             // 
+            this.LV_Medicaments_Autorises.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.CH_DepotLegal,
+            this.CH_NomCommerce,
+            this.CH_CodeFamilleMedoc});
             this.LV_Medicaments_Autorises.Location = new System.Drawing.Point(514, 138);
-            this.LV_Medicaments_Autorises.Name = "listView3";
+            this.LV_Medicaments_Autorises.Name = "LV_Medicaments_Autorises";
             this.LV_Medicaments_Autorises.Size = new System.Drawing.Size(414, 347);
             this.LV_Medicaments_Autorises.TabIndex = 4;
             this.LV_Medicaments_Autorises.UseCompatibleStateImageBehavior = false;
+            this.LV_Medicaments_Autorises.View = System.Windows.Forms.View.Details;
             // 
-            // button2
+            // BTN_Quitter
             // 
             this.BTN_Quitter.Location = new System.Drawing.Point(834, 494);
-            this.BTN_Quitter.Name = "button2";
+            this.BTN_Quitter.Name = "BTN_Quitter";
             this.BTN_Quitter.Size = new System.Drawing.Size(94, 29);
             this.BTN_Quitter.TabIndex = 6;
             this.BTN_Quitter.Text = "Quitter";
             this.BTN_Quitter.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(229, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(669, 42);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Nombre de médicaments autorisés par famille";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // CH_CodeFamille
+            // 
+            this.CH_CodeFamille.Text = "Code Famille";
+            this.CH_CodeFamille.Width = 120;
+            // 
+            // CH_NomFamille
+            // 
+            this.CH_NomFamille.Text = "Nom Famille";
+            this.CH_NomFamille.Width = 120;
+            // 
+            // CH_NbMedoc
+            // 
+            this.CH_NbMedoc.Text = "Nb Médicaments";
+            this.CH_NbMedoc.Width = 160;
+            // 
+            // CH_DepotLegal
+            // 
+            this.CH_DepotLegal.Text = "Dépot Légal";
+            this.CH_DepotLegal.Width = 120;
+            // 
+            // CH_NomCommerce
+            // 
+            this.CH_NomCommerce.Text = "Nom Commercial";
+            this.CH_NomCommerce.Width = 160;
+            // 
+            // CH_CodeFamilleMedoc
+            // 
+            this.CH_CodeFamilleMedoc.Text = "Code Famille";
+            this.CH_CodeFamilleMedoc.Width = 120;
             // 
             // NbMedicamentsAutorisesParFamille
             // 
@@ -87,6 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(974, 531);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BTN_Quitter);
             this.Controls.Add(this.LV_Medicaments_Autorises);
             this.Controls.Add(this.LV_Famille_Autorises);
@@ -114,5 +173,12 @@
         private ColumnHeader CH_DepotLegal_LV_MedicamentsAutorises;
         private ColumnHeader CH_NomCommercial_LV_MedicamentsAutorises;
         private ColumnHeader CH_CodeFamille_LV_MedicamentsAutorises;
+        private Label label2;
+        private ColumnHeader CH_CodeFamille;
+        private ColumnHeader CH_NomFamille;
+        private ColumnHeader CH_NbMedoc;
+        private ColumnHeader CH_DepotLegal;
+        private ColumnHeader CH_NomCommerce;
+        private ColumnHeader CH_CodeFamilleMedoc;
     }
 }

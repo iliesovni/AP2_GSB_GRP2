@@ -26,5 +26,10 @@ namespace AP2_GSB_GRP2
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
