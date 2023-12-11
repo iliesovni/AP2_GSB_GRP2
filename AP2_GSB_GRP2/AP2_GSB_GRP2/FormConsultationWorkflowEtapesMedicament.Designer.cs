@@ -43,7 +43,7 @@
             // 
             // pictureBoxLogo
             // 
-            this.pictureBoxLogo.Image = global::AP2_GSB_GRP2.Properties.Resources.LOGO_GSB_50par50;
+            //this.pictureBoxLogo.Image = global::AP2_GSB_GRP2.Properties.Resources.LOGO_GSB_50par50;
             this.pictureBoxLogo.Location = new System.Drawing.Point(-1, 0);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(159, 109);

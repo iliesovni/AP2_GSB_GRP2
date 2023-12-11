@@ -105,7 +105,7 @@
             // 
             // btnConnecter
             // 
-            this.btnConnecter.Image = global::AP2_GSB_GRP2.Properties.Resources.klipartz_com__3_;
+            //this.btnConnecter.Image = global::AP2_GSB_GRP2.Properties.Resources.klipartz_com__3_;
             this.btnConnecter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConnecter.Location = new System.Drawing.Point(115, 267);
             this.btnConnecter.Name = "btnConnecter";
@@ -116,7 +116,7 @@
             // 
             // pictureBoxConnexion
             // 
-            this.pictureBoxConnexion.Image = global::AP2_GSB_GRP2.Properties.Resources.klipartz_com;
+            //this.pictureBoxConnexion.Image = global::AP2_GSB_GRP2.Properties.Resources.klipartz_com;
             this.pictureBoxConnexion.Location = new System.Drawing.Point(69, 115);
             this.pictureBoxConnexion.Name = "pictureBoxConnexion";
             this.pictureBoxConnexion.Size = new System.Drawing.Size(31, 38);
@@ -125,7 +125,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::AP2_GSB_GRP2.Properties.Resources.klipartz_com__2_;
+            //this.pictureBox1.Image = global::AP2_GSB_GRP2.Properties.Resources.klipartz_com__2_;
             this.pictureBox1.Location = new System.Drawing.Point(69, 190);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 33);
