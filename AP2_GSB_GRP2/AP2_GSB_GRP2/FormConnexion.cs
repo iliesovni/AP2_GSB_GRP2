@@ -59,6 +59,12 @@ namespace AP2_GSB_GRP2
             if (utilisateurTrouve)
             {
                 MessageBox.Show("Connexion réussie !");
+                // On affiche le menu et on ferme cette form
+                Menu maFormMenu = new Menu();
+                maFormMenu.Show();
+
+                FormConnexion laFormCo = new FormConnexion();
+                laFormCo.Close();
             }
             else
             {
@@ -69,12 +75,7 @@ namespace AP2_GSB_GRP2
             con.Close();
 
 
-            // On affiche le menu et on ferme cette form
-            Menu maFormMenu = new Menu();
-            maFormMenu.Show();
-
-            FormConnexion laFormCo = new FormConnexion();
-            laFormCo.Close();
+            
 
         }
     }
