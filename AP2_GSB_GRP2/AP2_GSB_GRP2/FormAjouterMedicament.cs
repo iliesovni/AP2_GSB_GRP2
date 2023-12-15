@@ -34,8 +34,10 @@ namespace AP2_GSB_GRP2
 
         public static bool ajoutMedicament(string famille, string depot_legal, string nom_commercial, string composition, string effets, string contre_indications, float prix_echantillon)
         {
+            // Créer une instance de l'objet SqlCommand pour exécuter une procédure stockée dans une BDD
             using (SqlCommand requete = new SqlCommand("prc_ajout_medicament"))
             {
+                // Indiquer que la commande est une procédure stockée
                 requete.CommandType = System.Data.CommandType.StoredProcedure;
 
                 // Ajouter les paramètres à la procédure stockée
@@ -60,6 +62,7 @@ namespace AP2_GSB_GRP2
                 SqlParameter paramPrixEchantillon = new SqlParameter("@prix_echantillon", System.Data.SqlDbType.Float);
                 paramPrixEchantillon.Value = prix_echantillon;
 
+                // Ajouter les paramètres à la commande
                 requete.Parameters.Add(paramFamille);
                 requete.Parameters.Add(paramDepot_Legal);
                 requete.Parameters.Add(paramNomCommercial);
@@ -68,6 +71,7 @@ namespace AP2_GSB_GRP2
                 requete.Parameters.Add(paramContreIndications);
                 requete.Parameters.Add(paramPrixEchantillon);
 
+                // Executer la commande
                 SqlDataReader SqlDataRead = requete.ExecuteNonQuery();
 
             }
