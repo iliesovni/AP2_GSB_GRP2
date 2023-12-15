@@ -47,7 +47,12 @@ namespace AP2_GSB_GRP2
             string connstring = "Data Source = BTS2022-19\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DOMADJ\\izikkii";
             SqlConnection con = new SqlConnection(connstring);
             con.Open();
-            string query = "Select * from FAMILLE;";
+
+            SqlCommand updateCmd = new SqlCommand("MiseAJourNombreMedicaments", con);
+            updateCmd.CommandType = CommandType.StoredProcedure;
+            updateCmd.ExecuteNonQuery();
+
+            string query = "Select FAM_CODE, FAM_LIBELLE, FAM_NB_MED_AMM from FAMILLE;";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader reader = cmd.ExecuteReader();
             while(reader.Read())
