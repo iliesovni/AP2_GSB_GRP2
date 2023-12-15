@@ -11,5 +11,10 @@ namespace AP2_GSB_GRP2
         {
            this.Close();
         }
+
+        private void FormConsultationWorkflowEtapesMedicament_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

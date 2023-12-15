@@ -25,6 +25,8 @@ namespace AP2_GSB_GRP2
 
         private void btnConnecter_Click(object sender, EventArgs e)
         {
+            // A REFAIRE AVEC UNE PROCEDURE
+
             // Chaîne de connexion à la BDD
             string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
 
@@ -35,7 +37,7 @@ namespace AP2_GSB_GRP2
             con.Open();
 
             // Création d'un requête
-            string requete = "SELECT * FROM UTILISATEUR";
+            string requete = "SELECT NOM, MOT_DE_PASSE FROM UTILISATEUR";
 
             // Création d'un objet "Command" prenant la requete et la connexion en paramètre
             SqlCommand commande = new SqlCommand(requete, con);
@@ -49,7 +51,7 @@ namespace AP2_GSB_GRP2
             while (reader.Read())
             {
                 // On vérifie si le nom et le mdp correspondent à ceux en BDD
-                if (tbUsername.Text == reader.GetValue(1).ToString() && tbPassword.Text == reader.GetValue(7).ToString())
+                if (tbUsername.Text == reader.GetValue(0).ToString() && tbPassword.Text == reader.GetValue(1).ToString())
                 {
                     utilisateurTrouve = true;
                     break;

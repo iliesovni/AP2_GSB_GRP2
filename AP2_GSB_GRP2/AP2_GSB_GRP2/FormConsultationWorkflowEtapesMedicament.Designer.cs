@@ -43,7 +43,6 @@
             // 
             // pictureBoxLogo
             // 
-            //this.pictureBoxLogo.Image = global::AP2_GSB_GRP2.Properties.Resources.LOGO_GSB_50par50;
             this.pictureBoxLogo.Location = new System.Drawing.Point(-1, 0);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(159, 109);
@@ -121,7 +120,7 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // Form1
+            // FormConsultationWorkflowEtapesMedicament
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,8 +131,9 @@
             this.Controls.Add(this.lvMedoc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxLogo);
-            this.Name = "Form1";
+            this.Name = "FormConsultationWorkflowEtapesMedicament";
             this.Text = "FormConsultationWorkflowEtapesMedicaments";
+            this.Load += new System.EventHandler(this.FormConsultationWorkflowEtapesMedicament_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
