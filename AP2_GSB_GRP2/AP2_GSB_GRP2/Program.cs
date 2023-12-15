@@ -11,7 +11,9 @@ namespace AP2_GSB_GRP2
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormAjouterMedicament());
+            Application.Run(new FormConnexion());
+
+
         }
     }
 }

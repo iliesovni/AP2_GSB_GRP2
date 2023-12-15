@@ -31,5 +31,10 @@ namespace AP2_GSB_GRP2
         {
 
         }
+
+        private void BTN_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

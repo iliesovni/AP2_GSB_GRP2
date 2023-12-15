@@ -32,20 +32,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gBContenu = new System.Windows.Forms.GroupBox();
-            this.lbFamille = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbDepotLegal = new System.Windows.Forms.TextBox();
-            this.tbNonCommercial = new System.Windows.Forms.TextBox();
-            this.tbComposition = new System.Windows.Forms.TextBox();
-            this.tbEffets = new System.Windows.Forms.TextBox();
-            this.tbContreIndications = new System.Windows.Forms.TextBox();
             this.tbPrixEchantillon = new System.Windows.Forms.TextBox();
+            this.tbContreIndications = new System.Windows.Forms.TextBox();
+            this.tbEffets = new System.Windows.Forms.TextBox();
+            this.tbComposition = new System.Windows.Forms.TextBox();
+            this.tbNonCommercial = new System.Windows.Forms.TextBox();
+            this.tbDepotLegal = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbFamille = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,78 +94,47 @@
             this.gBContenu.TabIndex = 2;
             this.gBContenu.TabStop = false;
             // 
-            // lbFamille
+            // tbPrixEchantillon
             // 
-            this.lbFamille.AutoSize = true;
-            this.lbFamille.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbFamille.ForeColor = System.Drawing.Color.White;
-            this.lbFamille.Location = new System.Drawing.Point(26, 34);
-            this.lbFamille.Name = "lbFamille";
-            this.lbFamille.Size = new System.Drawing.Size(73, 28);
-            this.lbFamille.TabIndex = 0;
-            this.lbFamille.Text = "Famille";
+            this.tbPrixEchantillon.Location = new System.Drawing.Point(26, 297);
+            this.tbPrixEchantillon.Name = "tbPrixEchantillon";
+            this.tbPrixEchantillon.Size = new System.Drawing.Size(125, 27);
+            this.tbPrixEchantillon.TabIndex = 13;
             // 
-            // textBox1
+            // tbContreIndications
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 1;
+            this.tbContreIndications.Location = new System.Drawing.Point(512, 188);
+            this.tbContreIndications.Name = "tbContreIndications";
+            this.tbContreIndications.Size = new System.Drawing.Size(125, 27);
+            this.tbContreIndications.TabIndex = 12;
             // 
-            // label2
+            // tbEffets
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(254, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 28);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Dépot légal";
+            this.tbEffets.Location = new System.Drawing.Point(254, 188);
+            this.tbEffets.Name = "tbEffets";
+            this.tbEffets.Size = new System.Drawing.Size(125, 27);
+            this.tbEffets.TabIndex = 11;
             // 
-            // label3
+            // tbComposition
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(512, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(162, 28);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Nom commercial";
+            this.tbComposition.Location = new System.Drawing.Point(26, 188);
+            this.tbComposition.Name = "tbComposition";
+            this.tbComposition.Size = new System.Drawing.Size(125, 27);
+            this.tbComposition.TabIndex = 10;
             // 
-            // label4
+            // tbNonCommercial
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(26, 145);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 28);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Composition";
+            this.tbNonCommercial.Location = new System.Drawing.Point(512, 76);
+            this.tbNonCommercial.Name = "tbNonCommercial";
+            this.tbNonCommercial.Size = new System.Drawing.Size(125, 27);
+            this.tbNonCommercial.TabIndex = 9;
             // 
-            // label5
+            // tbDepotLegal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(254, 145);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 28);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Effets";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(512, 145);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(174, 28);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Contre-indications";
+            this.tbDepotLegal.Location = new System.Drawing.Point(254, 76);
+            this.tbDepotLegal.Name = "tbDepotLegal";
+            this.tbDepotLegal.Size = new System.Drawing.Size(125, 27);
+            this.tbDepotLegal.TabIndex = 8;
             // 
             // label7
             // 
@@ -178,47 +147,78 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Prix échantillon";
             // 
-            // tbDepotLegal
+            // label6
             // 
-            this.tbDepotLegal.Location = new System.Drawing.Point(254, 76);
-            this.tbDepotLegal.Name = "tbDepotLegal";
-            this.tbDepotLegal.Size = new System.Drawing.Size(125, 27);
-            this.tbDepotLegal.TabIndex = 8;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(512, 145);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(174, 28);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Contre-indications";
             // 
-            // tbNonCommercial
+            // label5
             // 
-            this.tbNonCommercial.Location = new System.Drawing.Point(512, 76);
-            this.tbNonCommercial.Name = "tbNonCommercial";
-            this.tbNonCommercial.Size = new System.Drawing.Size(125, 27);
-            this.tbNonCommercial.TabIndex = 9;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(254, 145);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 28);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Effets";
             // 
-            // tbComposition
+            // label4
             // 
-            this.tbComposition.Location = new System.Drawing.Point(26, 188);
-            this.tbComposition.Name = "tbComposition";
-            this.tbComposition.Size = new System.Drawing.Size(125, 27);
-            this.tbComposition.TabIndex = 10;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(26, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 28);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Composition";
             // 
-            // tbEffets
+            // label3
             // 
-            this.tbEffets.Location = new System.Drawing.Point(254, 188);
-            this.tbEffets.Name = "tbEffets";
-            this.tbEffets.Size = new System.Drawing.Size(125, 27);
-            this.tbEffets.TabIndex = 11;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(512, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(162, 28);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Nom commercial";
             // 
-            // tbContreIndications
+            // label2
             // 
-            this.tbContreIndications.Location = new System.Drawing.Point(512, 188);
-            this.tbContreIndications.Name = "tbContreIndications";
-            this.tbContreIndications.Size = new System.Drawing.Size(125, 27);
-            this.tbContreIndications.TabIndex = 12;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(254, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 28);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Dépot légal";
             // 
-            // tbPrixEchantillon
+            // textBox1
             // 
-            this.tbPrixEchantillon.Location = new System.Drawing.Point(26, 297);
-            this.tbPrixEchantillon.Name = "tbPrixEchantillon";
-            this.tbPrixEchantillon.Size = new System.Drawing.Size(125, 27);
-            this.tbPrixEchantillon.TabIndex = 13;
+            this.textBox1.Location = new System.Drawing.Point(26, 76);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(125, 27);
+            this.textBox1.TabIndex = 1;
+            // 
+            // lbFamille
+            // 
+            this.lbFamille.AutoSize = true;
+            this.lbFamille.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbFamille.ForeColor = System.Drawing.Color.White;
+            this.lbFamille.Location = new System.Drawing.Point(26, 34);
+            this.lbFamille.Name = "lbFamille";
+            this.lbFamille.Size = new System.Drawing.Size(73, 28);
+            this.lbFamille.TabIndex = 0;
+            this.lbFamille.Text = "Famille";
             // 
             // btnAnnuler
             // 
@@ -228,6 +228,7 @@
             this.btnAnnuler.TabIndex = 3;
             this.btnAnnuler.Text = "Annuler";
             this.btnAnnuler.UseVisualStyleBackColor = true;
+            this.btnAnnuler.Click += new System.EventHandler(this.btnAnnuler_Click);
             // 
             // btnAjouter
             // 
@@ -251,6 +252,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormAjouterMedicament";
             this.Text = "Ajout Medicament";
+            this.Load += new System.EventHandler(this.FormAjouterMedicament_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gBContenu.ResumeLayout(false);
             this.gBContenu.PerformLayout();

@@ -17,7 +17,7 @@ namespace AP2_GSB_GRP2
         private string amm;
         private int derniereEtape;
         private char codeFamille;
-        private List<Workflow> lesEtapes;
+       // private List<Workflow> lesEtapes;
 
 
         // constructeur
@@ -32,7 +32,7 @@ namespace AP2_GSB_GRP2
             this.amm = leAmm;
             this.derniereEtape = laDerniereEtape;
             this.codeFamille = leCodeFamille;
-            this.lesEtapes = new List<Workflow>();
+            //this.lesEtapes = new List<Workflow>();
 
         }
 
@@ -73,15 +73,15 @@ namespace AP2_GSB_GRP2
             return this.derniereEtape;
         }
 
-        public string getLeCodeFamille()
+        /*public string getLeCodeFamille()
         {
             return this.codeFamille;
         }
         public List<Workflow> getLesEtapes()
         {
             return this.lesEtapes;
-        }
-
+        }*/
+        
         public void setDepotLegal(string leDepotLegal)
         {
             this.depotLegal = leDepotLegal;

@@ -16,5 +16,10 @@ namespace AP2_GSB_GRP2
         {
             InitializeComponent();
         }
+
+        private void BTN_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
