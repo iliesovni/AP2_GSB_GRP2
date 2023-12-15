@@ -12,42 +12,18 @@ namespace AP2_GSB_GRP2
 
         private void FormAjouterMedicament_Load(object sender, EventArgs e)
         {
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
+            /*string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
             SqlConnection con = new SqlConnection(connexion);
             con.Open();
             string requete = "";
             SqlCommand commande = new SqlCommand(requete, con);
             SqlDataReader reader = commande.ExecuteReader();
 
-            bool utilisateurTrouve = false;
-
-            while (reader.Read())
-            {
-                if (tbUsername.Text == reader.GetValue(1).ToString() && tbPassword.Text == reader.GetValue(7).ToString())
-                {
-                    utilisateurTrouve = true;
-                    break;
-                }
-            }
-
-            if (utilisateurTrouve)
-            {
-                MessageBox.Show("Connexion réussie !");
-            }
-            else
-            {
-                MessageBox.Show("Erreur lors de la saisie de vos identifiants");
-            }
-
+            
             con.Close(); // Fermer la connexion après utilisation
 
-
-            // On affiche le menu et on ferme cette form
-            Menu maFormMenu = new Menu();
-            maFormMenu.Show();
-
-            FormConnexion laFormCo = new FormConnexion();
-            laFormCo.Close();
+            */
+          
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
@@ -92,11 +68,8 @@ namespace AP2_GSB_GRP2
                 requete.Parameters.Add(paramContreIndications);
                 requete.Parameters.Add(paramPrixEchantillon);
 
+                SqlDataReader SqlDataRead = requete.ExecuteNonQuery();
 
-                requete.ExecuteNonQuery();
-
-                bool ilExiste = (bool)paramLaNvlDateNorme.Value;
-                return ilExiste;
             }
         }
 
