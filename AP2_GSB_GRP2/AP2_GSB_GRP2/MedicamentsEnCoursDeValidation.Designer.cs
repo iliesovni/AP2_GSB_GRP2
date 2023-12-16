@@ -151,6 +151,7 @@
             this.Controls.Add(this.PB_LogoValidation);
             this.Name = "MedicamentsEnCoursDeValidation";
             this.Text = "MedicamentsEnCoursDeValidation";
+            this.Load += new System.EventHandler(this.MedicamentsEnCoursDeValidation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PB_LogoValidation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

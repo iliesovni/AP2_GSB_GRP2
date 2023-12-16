@@ -74,6 +74,7 @@
             this.lvMedoc.TabIndex = 2;
             this.lvMedoc.UseCompatibleStateImageBehavior = false;
             this.lvMedoc.View = System.Windows.Forms.View.Details;
+            this.lvMedoc.SelectedIndexChanged += new System.EventHandler(this.lvMedoc_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
