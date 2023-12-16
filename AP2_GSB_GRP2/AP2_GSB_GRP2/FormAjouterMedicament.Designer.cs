@@ -44,10 +44,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbFamille = new System.Windows.Forms.Label();
             this.btnAnnuler = new System.Windows.Forms.Button();
             this.btnAjouter = new System.Windows.Forms.Button();
+            this.tbFamille = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gBContenu.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +74,7 @@
             // 
             // gBContenu
             // 
+            this.gBContenu.Controls.Add(this.tbFamille);
             this.gBContenu.Controls.Add(this.tbPrixEchantillon);
             this.gBContenu.Controls.Add(this.tbContreIndications);
             this.gBContenu.Controls.Add(this.tbEffets);
@@ -86,7 +87,6 @@
             this.gBContenu.Controls.Add(this.label4);
             this.gBContenu.Controls.Add(this.label3);
             this.gBContenu.Controls.Add(this.label2);
-            this.gBContenu.Controls.Add(this.textBox1);
             this.gBContenu.Controls.Add(this.lbFamille);
             this.gBContenu.Location = new System.Drawing.Point(193, 172);
             this.gBContenu.Name = "gBContenu";
@@ -202,13 +202,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Dépot légal";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(26, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 1;
-            // 
             // lbFamille
             // 
             this.lbFamille.AutoSize = true;
@@ -238,6 +231,14 @@
             this.btnAjouter.TabIndex = 4;
             this.btnAjouter.Text = "Ajouter";
             this.btnAjouter.UseVisualStyleBackColor = true;
+            this.btnAjouter.Click += new System.EventHandler(this.btnAjouter_Click);
+            // 
+            // tbFamille
+            // 
+            this.tbFamille.Location = new System.Drawing.Point(26, 76);
+            this.tbFamille.Name = "tbFamille";
+            this.tbFamille.Size = new System.Drawing.Size(125, 27);
+            this.tbFamille.TabIndex = 14;
             // 
             // FormAjouterMedicament
             // 
@@ -278,9 +279,9 @@
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
         private Label lbFamille;
         private Button btnAnnuler;
         private Button btnAjouter;
+        private TextBox tbFamille;
     }
 }

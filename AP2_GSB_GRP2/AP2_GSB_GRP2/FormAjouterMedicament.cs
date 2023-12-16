@@ -13,36 +13,18 @@ namespace AP2_GSB_GRP2
 
         private void FormAjouterMedicament_Load(object sender, EventArgs e)
         {
-            /*string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
-            SqlConnection con = new SqlConnection(connexion);
-            con.Open();
-            string requete = "";
-            SqlCommand commande = new SqlCommand(requete, con);
-            SqlDataReader reader = commande.ExecuteReader();
-
             
-            con.Close(); // Fermer la connexion après utilisation
-
-            */
-
         }
 
-        private void btnAnnuler_Click(object sender, EventArgs e)
+        public static bool ajoutMedicament(string depot_legal, string nom_commercial, string composition, string effets, string contre_indications, string med_Amm, string fam_Code ,SqlConnection con)
         {
-            this.Close();
-        }
+            bool ok = false;
 
-
-       /* public static bool ajoutMedicament(string famille, string depot_legal, string nom_commercial, string composition, string effets, string contre_indications, float prix_echantillon)
-        {
-            using (SqlCommand requete = new SqlCommand("prc_ajout_medicament"))
+            using (SqlCommand requete = new SqlCommand("prc_ajout_medicament", con))
             {
                 requete.CommandType = System.Data.CommandType.StoredProcedure;
 
                 // Ajouter les paramètres à la procédure stockée
-                SqlParameter paramFamille = new SqlParameter("@famille", System.Data.SqlDbType.NVarChar, 50);
-                paramFamille.Value = famille;
-
                 SqlParameter paramDepot_Legal = new SqlParameter("@depot_legal", System.Data.SqlDbType.NVarChar, 200);
                 paramDepot_Legal.Value = depot_legal;
 
@@ -58,21 +40,60 @@ namespace AP2_GSB_GRP2
                 SqlParameter paramContreIndications = new SqlParameter("@contre_indications", System.Data.SqlDbType.NVarChar, 200);
                 paramContreIndications.Value = contre_indications;
 
-                SqlParameter paramPrixEchantillon = new SqlParameter("@prix_echantillon", System.Data.SqlDbType.Float);
-                paramPrixEchantillon.Value = prix_echantillon;
+                SqlParameter paramMedAmm = new SqlParameter("@med_amm", System.Data.SqlDbType.NVarChar, 200);
+                paramMedAmm.Value = med_Amm;
 
-                requete.Parameters.Add(paramFamille);
+                SqlParameter paramFamCode = new SqlParameter("@fam_code_medicament", System.Data.SqlDbType.NVarChar, 200);
+                paramFamCode.Value = fam_Code;
+
                 requete.Parameters.Add(paramDepot_Legal);
                 requete.Parameters.Add(paramNomCommercial);
                 requete.Parameters.Add(paramComposition);
                 requete.Parameters.Add(paramEffets);
                 requete.Parameters.Add(paramContreIndications);
-                requete.Parameters.Add(paramPrixEchantillon);
+                requete.Parameters.Add(paramMedAmm);
+                requete.Parameters.Add(paramFamCode);
 
-                SqlDataReader SqlDataRead = requete.ExecuteNonQuery();
+
+
+                try
+                {
+                    requete.ExecuteNonQuery();
+                    ok = true;
+                    MessageBox.Show("Médicament ajouté avec succès ! ");
+
+                }
+                catch(Exception error)
+                {
+                    ok = false;
+                    MessageBox.Show("Erreur lors de la saisie du médicament", error.Message);
+
+                }
+
+                return ok;
 
             }
-        }*/
 
+
+        }
+        private void btnAjouter_Click(object sender, EventArgs e)
+        {
+            // Chaîne de connexion à la BDD
+            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
+
+            // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
+            SqlConnection con = new SqlConnection(connexion);
+
+            // Ouverture de la connexion à la BDD
+            con.Open();
+
+            
+            ajoutMedicament(tbFamille.Text.ToString(), tbDepotLegal.Text.ToString(), tbNonCommercial.Text.ToString(), tbComposition.Text.ToString(), tbEffets.Text.ToString(), tbContreIndications.Text.ToString(), tbPrixEchantillon.Text.ToString(), con);
+        }
+
+        private void btnAnnuler_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
