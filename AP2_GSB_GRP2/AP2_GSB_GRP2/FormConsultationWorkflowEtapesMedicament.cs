@@ -82,7 +82,7 @@ namespace AP2_GSB_GRP2
             {
                 ListViewItem uneLigne = new ListViewItem();
                 uneLigne.Text = uneEtape.getNum().ToString();
-                uneLigne.SubItems.Add(leClick);
+                uneLigne.SubItems.Add(uneEtape.getLibelle());
 
                 lvEtapes.Items.Add(uneLigne);
             }
