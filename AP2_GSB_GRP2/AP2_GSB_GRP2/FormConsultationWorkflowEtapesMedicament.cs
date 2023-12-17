@@ -16,13 +16,13 @@ namespace AP2_GSB_GRP2
 
         private void FormConsultationWorkflowEtapesMedicament_Load(object sender, EventArgs e)
         {
-            Globale.lesMedicaments.Clear();
+            //Globale.lesMedicaments.Clear();
 
-            // Cha�ne de connexion � la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true; User Id=DOMADJ\\medjenid";
+            // Cha�ne de connexion à la BDD
+            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
             // Initialisation d'une connexion � la BDD � partir de la cha�ne de connexion
             SqlConnection con = new SqlConnection(connexion);
-            // Ouverture de la connexion � la BDD
+            // Ouverture de la connexion à la BDD
             con.Open();
 
             Globale.lesMedicaments = new Dictionary<string, Medicament>();
@@ -41,7 +41,7 @@ namespace AP2_GSB_GRP2
                 string effets = SqlDataRead["MED_EFFETS"].ToString();
                 string contreIncic = SqlDataRead["MED_CONTREINDIC"].ToString();
                 string medAmm = SqlDataRead["MED_AMM"].ToString();
-                string famCode = SqlDataRead["FAM_CODE_MEDCIAMENT"].ToString();
+                string famCode = SqlDataRead["FAM_CODE_MEDICAMENT"].ToString();
 
                 Globale.lesMedicaments.Add(depotLegal, new Medicament(depotLegal, nomCommercial, composition, effets, contreIncic, medAmm));
             }
@@ -67,20 +67,62 @@ namespace AP2_GSB_GRP2
 
         }
 
+        public void getLesEtapes()
+        {
+            Globale.lesEtapes = new List<Etape>();
+
+            SqlCommand maRequete = new SqlCommand("prc_getEtapes");
+            maRequete.CommandType = System.Data.CommandType.StoredProcedure;
+            maRequete.ExecuteNonQuery();
+
+            SqlDataReader SqlDataRead = maRequete.ExecuteReader();
+
+            while (SqlDataRead.Read())
+            {
+                int num = Convert.ToInt32(SqlDataRead["ETP_NUM"]);
+                string libelle = SqlDataRead["ETP_LIBELLE"].ToString();
+                string norme = SqlDataRead["ETP_NORME"].ToString();
+                DateTime dateNorme = DateTime.MaxValue;
+
+                if (SqlDataRead["ETP_DATE_NORME"].ToString() != "")
+                {
+                    dateNorme = Convert.ToDateTime(SqlDataRead["ETP_DATE_NORME"]);
+                }
+
+                if (norme == "" && dateNorme == DateTime.MaxValue)
+                {
+                    Globale.lesEtapes.Add(new Etape(num, libelle));
+                }
+                else
+                {
+                    Globale.lesEtapes.Add(new EtapeNormee(norme, dateNorme, num, libelle));
+                }
+            }
+
+            SqlDataRead.Close();
+        }
+
         private void lvMedoc_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Chaine de connexion à la BDD
+            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
+            // Initialisation d'une connexion � la BDD � partir de la cha�ne de connexion
+            SqlConnection con = new SqlConnection(connexion);
+            // Ouverture de la connexion à la BDD
+            con.Open();
+
             string leClick = lvMedoc.Items[lvMedoc.FocusedItem.Index].Text;
 
             lvEtapes.Items.Clear();
-            foreach (Workflow E in Globale.lesMedicaments[numLigClic].getLesEtapes())
+            foreach (Etape uneEtape in Globale.lesMedicaments[leClick].getLesEtapes(con))
             {
-                ListViewItem ligne = new ListViewItem();
-                ligne.Text = E.getEtape().getNum().ToString();
-                ligne.SubItems.Add(numLigClic);
-                ligne.SubItems.Add(E.getDateDecision().ToString());
+                ListViewItem uneLigne = new ListViewItem();
+                uneLigne.Text = uneEtape.getNum().ToString();
+                uneLigne.SubItems.Add(leClick);
 
-                lv_med_workflow.Items.Add(ligne);
+                lvEtapes.Items.Add(uneLigne);
             }
         }
+
     }
 }

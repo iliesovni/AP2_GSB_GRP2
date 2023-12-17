@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,5 +53,44 @@ namespace AP2_GSB_GRP2
         public void setContreIndic(string leContreIndic) { this.contreIndic = leContreIndic; }
 
         public void setAmm(string leAmm) { this.amm = leAmm; }
+
+        public List<Etape> getLesEtapes(SqlConnection con)
+        {
+            List<Etape> lesEtapes = new List<Etape>();
+
+            {
+
+                SqlCommand maRequete = new SqlCommand("prc_getEtapes", con);
+                maRequete.CommandType = System.Data.CommandType.StoredProcedure;
+
+                using (SqlDataReader SqlDataRead = maRequete.ExecuteReader())
+                {
+                    while (SqlDataRead.Read())
+                    {
+                        int num = Convert.ToInt32(SqlDataRead["ETP_NUM"]);
+                        string libelle = SqlDataRead["ETP_LIBELLE"].ToString();
+                        string norme = SqlDataRead["ETP_NORME"].ToString();
+                        DateTime dateNorme = DateTime.MaxValue;
+
+                        if (SqlDataRead["ETP_DATE_NORME"].ToString() != "")
+                        {
+                            dateNorme = Convert.ToDateTime(SqlDataRead["ETP_DATE_NORME"]);
+                        }
+
+                        if (norme == "" && dateNorme == DateTime.MaxValue)
+                        {
+                            lesEtapes.Add(new Etape(num, libelle));
+                        }
+                        else
+                        {
+                            lesEtapes.Add(new EtapeNormee(norme, dateNorme, num, libelle));
+                        }
+                    }
+                }
+            }
+
+            return lesEtapes;
+        }
+
     }
 }
