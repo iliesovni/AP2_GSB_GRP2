@@ -22,7 +22,7 @@ namespace AP2_GSB_GRP2
         private void FormConnexion_Load(object sender, EventArgs e)
         {
             // Pour que le Mdp soit écrit avec des "*"
-            //tbPassword.PasswordChar = '*';
+            tbPassword.PasswordChar = '*';
 
         }
 
