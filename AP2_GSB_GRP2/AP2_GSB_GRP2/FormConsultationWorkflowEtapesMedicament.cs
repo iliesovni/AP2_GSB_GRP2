@@ -18,11 +18,11 @@ namespace AP2_GSB_GRP2
         {
             Globale.lesMedicaments.Clear();
 
-            // Chaîne de connexion à la BDD
+            // Chaï¿½ne de connexion ï¿½ la BDD
             string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true; User Id=DOMADJ\\medjenid";
-            // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
+            // Initialisation d'une connexion ï¿½ la BDD ï¿½ partir de la chaï¿½ne de connexion
             SqlConnection con = new SqlConnection(connexion);
-            // Ouverture de la connexion à la BDD
+            // Ouverture de la connexion ï¿½ la BDD
             con.Open();
 
             Globale.lesMedicaments = new Dictionary<string, Medicament>();

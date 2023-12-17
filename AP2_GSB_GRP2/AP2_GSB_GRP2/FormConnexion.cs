@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,9 @@ namespace AP2_GSB_GRP2
 
         private void FormConnexion_Load(object sender, EventArgs e)
         {
-         
+            // Pour que le Mdp soit écrit avec des "*"
+            tbPassword.PasswordChar = '*';
+
         }
 
         private void btnConnecter_Click(object sender, EventArgs e)
@@ -28,7 +31,7 @@ namespace AP2_GSB_GRP2
             // A REFAIRE AVEC UNE PROCEDURE
 
             // Chaîne de connexion à la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
+            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
 
             // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
             SqlConnection con = new SqlConnection(connexion);
@@ -50,17 +53,28 @@ namespace AP2_GSB_GRP2
             // Parcours des données récupérées
             while (reader.Read())
             {
-                // On vérifie si le nom et le mdp correspondent à ceux en BDD
-                if (tbUsername.Text == reader.GetValue(0).ToString() && tbPassword.Text == reader.GetValue(1).ToString())
+                // On récupère le mot de passe haché stocké en base de données (supposons que c'est en hexadécimal)
+                string motDePasseBDD = reader.GetValue(1).ToString();
+
+                // On hache le mot de passe saisi pour le comparer au mot de passe en base de données
+                var bytes = new UTF8Encoding().GetBytes(tbPassword.Text);
+                var sha256 = System.Security.Cryptography.SHA256.Create();
+                var hash = sha256.ComputeHash(bytes);
+                string mdpSaisi = BitConverter.ToString(hash).Replace("-", "").ToLower(); // Conversion en représentation hexadécimale
+
+                // On vérifie si le nom d'utilisateur correspond ET si les mots de passe hachés correspondent
+                if (tbUsername.Text == reader.GetValue(0).ToString() && mdpSaisi == motDePasseBDD)
                 {
                     utilisateurTrouve = true;
                     break;
                 }
             }
 
+
+
             if (utilisateurTrouve)
             {
-                MessageBox.Show("Connexion réussie !");
+                MessageBox.Show("Connexion effectuée", "Message : Authentification réussie !", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 // On affiche le menu et on ferme cette form
                 Menu maFormMenu = new Menu();
                 maFormMenu.Show();
@@ -70,7 +84,7 @@ namespace AP2_GSB_GRP2
             }
             else
             {
-                MessageBox.Show("Erreur lors de la saisie de vos identifiants");
+                MessageBox.Show("Les données saisies sont incorrectes, veuillez les vérifier", "Erreur : Données d'authentifications incorrectes", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             // Fermeture de la connexion à la base de données

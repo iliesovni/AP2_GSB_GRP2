@@ -59,5 +59,15 @@ namespace AP2_GSB_GRP2.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo_GSB {
+            get {
+                object obj = ResourceManager.GetObject("Logo GSB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

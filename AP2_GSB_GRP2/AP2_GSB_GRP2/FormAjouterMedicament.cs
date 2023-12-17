@@ -66,7 +66,7 @@ namespace AP2_GSB_GRP2
                 catch(Exception error)
                 {
                     ok = false;
-                    MessageBox.Show("Erreur lors de la saisie du médicament", error.Message);
+                    MessageBox.Show("Erreur lors de la saisie du médicament", error.Message, MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 
                 }
 
@@ -79,7 +79,7 @@ namespace AP2_GSB_GRP2
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             // Chaîne de connexion à la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
+            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true";
 
             // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
             SqlConnection con = new SqlConnection(connexion);
