@@ -14,7 +14,7 @@ namespace AP2_GSB_GRP2
             NbMedicamentsAutorisesParFamille form2 = new NbMedicamentsAutorisesParFamille();
             form2.Show();
 
-            string connstring = "Data Source = BTS2022-19\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DOMADJ\\izikkii";
+            string connstring = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj";
             SqlConnection con = new SqlConnection(connstring);
             con.Open();
             string query = "Select * from FAMILLE;";
