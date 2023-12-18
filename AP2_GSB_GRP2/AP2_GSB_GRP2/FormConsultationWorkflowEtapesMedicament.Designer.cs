@@ -44,8 +44,9 @@
             // pictureBoxLogo
             // 
             this.pictureBoxLogo.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
-            this.pictureBoxLogo.Size = new System.Drawing.Size(159, 109);
+            this.pictureBoxLogo.Size = new System.Drawing.Size(139, 82);
             this.pictureBoxLogo.TabIndex = 0;
             this.pictureBoxLogo.TabStop = false;
             // 
@@ -54,9 +55,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 31.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(183, 21);
+            this.label1.Location = new System.Drawing.Point(160, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1050, 70);
+            this.label1.Size = new System.Drawing.Size(851, 57);
             this.label1.TabIndex = 1;
             this.label1.Text = "Consultation des étapes d\'un médicament";
             // 
@@ -66,9 +67,10 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.lvMedoc.Location = new System.Drawing.Point(163, 160);
+            this.lvMedoc.Location = new System.Drawing.Point(143, 120);
+            this.lvMedoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvMedoc.Name = "lvMedoc";
-            this.lvMedoc.Size = new System.Drawing.Size(357, 404);
+            this.lvMedoc.Size = new System.Drawing.Size(313, 304);
             this.lvMedoc.TabIndex = 2;
             this.lvMedoc.UseCompatibleStateImageBehavior = false;
             this.lvMedoc.View = System.Windows.Forms.View.Details;
@@ -93,9 +95,10 @@
             this.lvEtapes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader4,
             this.columnHeader5});
-            this.lvEtapes.Location = new System.Drawing.Point(673, 160);
+            this.lvEtapes.Location = new System.Drawing.Point(589, 120);
+            this.lvEtapes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lvEtapes.Name = "lvEtapes";
-            this.lvEtapes.Size = new System.Drawing.Size(357, 404);
+            this.lvEtapes.Size = new System.Drawing.Size(313, 304);
             this.lvEtapes.TabIndex = 3;
             this.lvEtapes.UseCompatibleStateImageBehavior = false;
             this.lvEtapes.View = System.Windows.Forms.View.Details;
@@ -112,9 +115,10 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(936, 611);
+            this.btnQuitter.Location = new System.Drawing.Point(819, 458);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(94, 29);
+            this.btnQuitter.Size = new System.Drawing.Size(82, 22);
             this.btnQuitter.TabIndex = 4;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -122,15 +126,16 @@
             // 
             // FormConsultationWorkflowEtapesMedicament
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(1104, 505);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.lvEtapes);
             this.Controls.Add(this.lvMedoc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxLogo);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormConsultationWorkflowEtapesMedicament";
             this.Text = "FormConsultationWorkflowEtapesMedicaments";
             this.Load += new System.EventHandler(this.FormConsultationWorkflowEtapesMedicament_Load);
