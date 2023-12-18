@@ -27,6 +27,16 @@ namespace AP2_GSB_GRP2
             this.connection = new SqlConnection(this.connection_string);
             this.connection.Open();
         }
+
+        public SqlConnection getCo()
+        {
+            return this.connection;
+        }
+
+        public void Logout()
+        {
+            this.connection.Close();
+        }
     }
 
 }

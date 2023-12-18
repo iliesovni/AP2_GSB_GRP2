@@ -29,7 +29,7 @@ namespace AP2_GSB_GRP2
             string connstring = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj;MultipleActiveResultSets=True";
             SqlConnection con = new SqlConnection(connstring);
             con.Open();
-            string query = "Select * from MEDICAMENT";
+            string query = "Select * from MEDICAMENT WHERE MED_DEPOTLEGAL IN (SELECT MED_DEPOTLEGAL_DV FROM DERNIERE_VALIDATION)\r\n";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -63,6 +63,26 @@ namespace AP2_GSB_GRP2
                 lvi.SubItems.Add(reader.GetValue(2).ToString());
                 LV_Etape_Validation.Items.Add(lvi);
             }
+        }
+
+        private void MedicamentsEnCoursDeValidation_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MedicamentsEnCoursDeValidation_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MedicamentsEnCoursDeValidation_Load_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LV_Medicaments_Validation_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
