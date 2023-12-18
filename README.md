@@ -1,4 +1,3 @@
-
 Bienvenue
 # Projet C# GSB_gesAMM
 Ce projet porte sur la réalisation d'une application sur la gestion de médicaments en Windows Form C# sur **Visual Studio** et **Sql Server**
