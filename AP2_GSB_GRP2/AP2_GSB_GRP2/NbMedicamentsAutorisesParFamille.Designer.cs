@@ -147,6 +147,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NbMedicamentsAutorisesParFamille";
             this.Text = "NbMedicamentsAutorisesParFamille";
+            this.Load += new System.EventHandler(this.NbMedicamentsAutorisesParFamille_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.PB_LogoAutorises)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

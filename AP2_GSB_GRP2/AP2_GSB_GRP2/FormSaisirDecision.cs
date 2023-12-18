@@ -14,12 +14,13 @@ namespace AP2_GSB_GRP2
 {
     public partial class FormSaisirDecision : Form
     {
-        string leClickM;
-        string leClickE;
+
 
         public FormSaisirDecision()
         {
             InitializeComponent();
+
+
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,12 +39,18 @@ namespace AP2_GSB_GRP2
             Connexion cnx = new Connexion("DESKTOP-26S0M0E\\SQLEXPRESS", "GSB_gesAMM");
             SqlCommand cmd = new SqlCommand("prc_getMedicaments", cnx.getCo());
             SqlCommand cmdE = new SqlCommand("prc_getEtapesNonValide", cnx.getCo());
+       
+
+
+
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmdE.CommandType = CommandType.StoredProcedure;
 
+
             cmd.ExecuteNonQuery();
             cmdE.ExecuteNonQuery();
+
 
             SqlDataReader SqlDataRead = cmd.ExecuteReader();
             SqlDataReader SqlDataReadE = cmdE.ExecuteReader();
@@ -115,9 +122,42 @@ namespace AP2_GSB_GRP2
 
         private void button1_Click(object sender, EventArgs e)
         {
-           leClickM = lvMedoc.Items[lvMedoc.FocusedItem.Index].Text;
-            MessageBox.Show(leClickM);
+            // Assurez-vous que quelque chose est sélectionné dans la ListView
+            if (lvMedoc.SelectedItems.Count > 0)
+            {
+                string leClickM = lvMedoc.SelectedItems[0].Text;
+                string leClickE = lvE.SelectedItems[0].Text; // Assurez-vous que vous utilisez la ListView correcte pour l'étape
 
+                MessageBox.Show($"Medicament: {leClickM}, Etape: {leClickE}");
+
+                Connexion cnx = new Connexion("DESKTOP-26S0M0E\\SQLEXPRESS", "GSB_gesAMM");
+                SqlCommand cmdD = new SqlCommand("prc_ajout_decision", cnx.getCo());
+
+                try
+                {
+                    // Ajout des paramètres avec leurs valeurs
+                    cmdD.Parameters.Add(new SqlParameter("@idMedicament", SqlDbType.VarChar, 250)).Value = leClickM;
+                    cmdD.Parameters.Add(new SqlParameter("@idEtape", SqlDbType.Int)).Value = int.Parse(leClickE);
+                    cmdD.Parameters.Add(new SqlParameter("@decisionLibelle", SqlDbType.VarChar, 250)).Value = tbDecision.Text;
+
+                    // Exécution de la procédure stockée
+                    cmdD.CommandType = CommandType.StoredProcedure;
+                    cmdD.ExecuteNonQuery();
+
+                    // Affichage du message après l'insertion réussie
+                    MessageBox.Show("La décision a été ajoutée avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception x)
+                {
+                    // Affichage du message d'erreur en cas d'échec
+                    MessageBox.Show(x.GetBaseException().ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un médicament et une étape.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void listView1_SelectedIndexChanged_2(object sender, EventArgs e)

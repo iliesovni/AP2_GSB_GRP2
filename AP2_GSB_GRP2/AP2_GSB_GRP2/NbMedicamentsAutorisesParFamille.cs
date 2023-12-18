@@ -95,5 +95,10 @@ namespace AP2_GSB_GRP2
         {
 
         }
+
+        private void NbMedicamentsAutorisesParFamille_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

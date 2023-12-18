@@ -32,6 +32,11 @@ namespace AP2_GSB_GRP2
         {
             return this.connection;
         }
+
+        public void Logout()
+        {
+            this.connection.Close();
+        }
     }
 
 }
