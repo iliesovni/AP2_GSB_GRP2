@@ -58,11 +58,15 @@ namespace AP2_GSB_GRP2
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                ListViewItem lvi = new ListViewItem(reader.GetValue(5).ToString());
+                ListViewItem lvi = new ListViewItem(reader.GetValue(0).ToString());
                 lvi.SubItems.Add(reader.GetValue(0).ToString());
-                lvi.SubItems.Add(reader.GetValue(2).ToString());
                 LV_Etape_Validation.Items.Add(lvi);
             }
+        }
+
+        private void MedicamentsEnCoursDeValidation_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

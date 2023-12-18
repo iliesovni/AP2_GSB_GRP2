@@ -30,19 +30,13 @@ namespace AP2_GSB_GRP2
         {
             // A REFAIRE AVEC UNE PROCEDURE
             // Chaîne de connexion à la BDD
-            string connexion = "Data Source = DESKTOP-26S0M0E\\SQLEXPRESS; Initial Catalog = GSB_gesAMM; Integrated Security=true";
-
-            // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
-            SqlConnection con = new SqlConnection(connexion);
-
-            // Ouverture de la connexion à la BDD
-            con.Open();
+            Connexion uneConnexion = new Connexion("BTS2022-24\\SQLEXPRESS01", "GSB_gesAMM");
 
             // Création d'un requête
             string requete = "SELECT NOM, MOT_DE_PASSE FROM UTILISATEUR";
 
             // Création d'un objet "Command" prenant la requete et la connexion en paramètre
-            SqlCommand commande = new SqlCommand(requete, con);
+            SqlCommand commande = new SqlCommand(requete, uneConnexion.getCon());
 
             // Exécution de la requête
             SqlDataReader reader = commande.ExecuteReader();
@@ -76,13 +70,12 @@ namespace AP2_GSB_GRP2
                 MessageBox.Show("Connexion effectuée", "Message : Authentification réussie !", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 // On affiche le menu et on ferme cette form
                 Menu maFormMenu = new Menu();
-                maFormMenu.Show();
-                maFormMenu.MdiParent = this;
                 // Display the new form.  
                 maFormMenu.Show();
 
                 FormConnexion laFormCo = new FormConnexion();
                 laFormCo.Close();
+
             }
             else
             {
@@ -90,7 +83,7 @@ namespace AP2_GSB_GRP2
             }
 
             // Fermeture de la connexion à la base de données
-            con.Close();
+            //con.Close();
 
 
             
