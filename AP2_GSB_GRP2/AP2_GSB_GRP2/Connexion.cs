@@ -1,4 +1,4 @@
-﻿using AP2_GSB_GRP2;
+using AP2_GSB_GRP2;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -15,17 +15,22 @@ namespace AP2_GSB_GRP2
         private string database;
         private string connection_string;
 
-        private SqlCommand _command;
-        private SqlDataReader _reader;
-        private SqlConnection connection;
+        public SqlCommand _command;
+        public SqlDataReader _reader;
+        public SqlConnection connection;
 
         public Connexion(string serverName, string database)
-            {
+        {
             this.serverName = serverName;
             this.database = database;
             this.connection_string = $@"Data Source={this.serverName};Initial Catalog={this.database};Integrated Security=True;MultipleActiveResultSets=True";
             this.connection = new SqlConnection(this.connection_string);
             this.connection.Open();
+        }
+
+        public SqlConnection getCon() 
+        {
+            return this.connection;
         }
 
         public SqlConnection getCo()

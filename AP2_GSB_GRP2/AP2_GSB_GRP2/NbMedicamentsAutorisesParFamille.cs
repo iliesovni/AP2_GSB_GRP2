@@ -84,21 +84,16 @@ namespace AP2_GSB_GRP2
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void BTN_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void LV_Famille_Autorises_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NbMedicamentsAutorisesParFamille_Load_1(object sender, EventArgs e)
-        {
-
-        }
+        }
+
+        private void BTN_Quitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void NbMedicamentsAutorisesParFamille_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
