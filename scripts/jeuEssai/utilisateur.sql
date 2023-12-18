@@ -1,0 +1,1 @@
+INSERT INTO UTILISATEUR(NOM, PRENOM, CODE_POSTALE, ADRESSE, VILLE, MAIL, MOT_DE_PASSE) VALUES('pierre', 'pierre', 'pierre', 'pierre', 'pierre', 'pierre', 'd5a5d66b94e8da0cf63d4cd6d66cd489d78e77b697039c6c48e3ff8d81752139')
