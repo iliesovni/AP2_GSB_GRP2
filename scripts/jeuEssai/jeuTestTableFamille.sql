@@ -1,0 +1,22 @@
+INSERT INTO FAMILLE (FAM_CODE, FAM_LIBELLE, FAM_NB_MED_AMM)
+VALUES
+    ('AA', 'Antalgiques en association', 0),
+    ('AAA', 'Antalgiques antipyrétiques en association', 0),
+    ('AAC', 'Antidépresseur d''action centrale', 0),
+    ('AAH', 'Antivertigineux antihistaminique H1', 0),
+    ('ABA', 'Antibiotique antituberculeux', 0),
+    ('ABC', 'Antibiotique antiacnéique local', 0),
+    ('ABP', 'Antibiotique de la famille des béta-lactamines (pénicilline A)', 0),
+    ('AFC', 'Antibiotique de la famille des cyclines', 0),
+    ('AFM', 'Antibiotique de la famille des macrolides', 0),
+    ('AH', 'Antihistaminique H1 local', 0),
+    ('AIM', 'Antidépresseur imipraminique (tricyclique)', 0),
+    ('AIN', 'Antidépresseur inhibiteur sélectif de la recapture de la sérotonine', 0),
+    ('ALO', 'Antibiotique local (ORL)', 0),
+    ('ANS', 'Antidépresseur IMAO non sélectif', 0),
+    ('AO', 'Antibiotique ophtalmique', 0),
+    ('AP', 'Antipsychotique normothymique', 0),
+    ('AUM', 'Antibiotique urinaire minute', 0),
+    ('CRT', 'Corticoïde, antibiotique et antifongique à  usage local', 0),
+    ('HYP', 'Hypnotique antihistaminique', 0),
+    ('PSA', 'Psychostimulant, antiasthénique', 0);

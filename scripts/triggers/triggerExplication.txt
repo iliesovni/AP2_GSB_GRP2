@@ -1,0 +1,126 @@
+Les Triggers et les procédures stockées :
+La base de données dispose d'un trigger permettant de gérer l'ajout de medicament
+de façon à rendre la base de données dynamique. Elle dispose aussi de procédures stockées qui vont
+principalement permettre au logiciel d’interagir avec la base de données.
+
+Les procédures stockées permettant au logiciel d’interagir avec la base de données :
+Ces procédures permettent notamment de récupérer les données des table , d’insérer
+un médicament, et de mettre a jour le nombre de medicaments par famille.
+
+Procedures : 
+
+- prc_ajout_medicament:
+
+CREATE PROCEDURE prc_ajout_medicament
+@depot_legal VARCHAR(100), @nom_commercial VARCHAR(100), @composition VARCHAR(100), @effets VARCHAR(100), @contre_indications VARCHAR(100), @med_amm VARCHAR(100), @fam_code_medicament VARCHAR(100)
+AS 
+BEGIN
+
+    INSERT INTO MEDICAMENT(MED_DEPOTLEGAL, MED_NOMCOMMERCIAL, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_AMM, FAM_CODE_MEDICAMENT)
+    VALUES (@depot_legal, @nom_commercial, @composition, @effets, @contre_indications, @med_amm, @fam_code_medicament)
+END
+GO
+
+- prc_getEtapes :
+
+CREATE PROCEDURE prc_getEtapes
+AS
+BEGIN
+
+    SET NOCOUNT ON;
+
+    SELECT ETP_NUM, ETP_LIBELLE, ETP_NORME, ETP_DATE_NORME
+    FROM ETAPE
+    INNER JOIN ETAPE_NORME ON ETP_NUM = ETP_NUM_NORME
+END
+GO
+
+- prc_getMedicaments :
+
+CREATE PROCEDURE prc_getMedicaments
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT MED_DEPOTLEGAL, MED_NOMCOMMERCIAL, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_AMM, FAM_CODE_MEDICAMENT
+    FROM MEDICAMENT
+END
+GO
+
+- prc_MiseAJourNombreMedicaments :
+
+CREATE PROCEDURE MiseAJourNombreMedicaments
+@depot_legal VARCHAR(100), @nom_commercial VARCHAR(100), @composition VARCHAR(100), @effets VARCHAR(100), @contre_indications VARCHAR(100), @med_amm VARCHAR(100), @fam_code_medicament VARCHAR(100)
+AS 
+BEGIN
+    -- SET NOCOUNT ON added to prevent extra result sets from
+    -- interfering with SELECT statements.
+    SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+    UPDATE FAMILLE
+    SET FAM_NB_MED_AMM = (
+        SELECT COUNT(*)
+        FROM MEDICAMENT
+        WHERE MEDICAMENT.FAM_CODE_MEDICAMENT = FAMILLE.FAM_CODE);
+END
+GO
+
+- prc_VerifierMedicamentDansEtapeNormee :
+
+CREATE PROCEDURE VerifierMedicamentDansEtapeNormee
+	@MED_DEPOTLEGAL VARCHAR(255),
+    @Resultat INT OUTPUT
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SET @Resultat = 0;
+
+	IF EXISTS (SELECT 1 FROM DERNIERE_VALIDATION WHERE MED_DEPOTLEGAL_DV = @MED_DEPOTLEGAL)
+        BEGIN
+            -- Mettre à jour le résultat à 1 (true) si le médicament est trouvé dans DERNIERE_VALIDATION
+            SET @Resultat = 1;
+        END
+END
+GO
+
+Trigger : 
+
+- trg_ajoutmed : 
+
+CREATE TRIGGER VerifExisteFamille
+   ON  MEDICAMENT
+   INSTEAD OF INSERT
+AS 
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for trigger here
+	DECLARE @depotlegal VARCHAR(10)
+	DECLARE @nomcommercial VARCHAR(25)
+	DECLARE @composition VARCHAR(255)
+	DECLARE @effets VARCHAR(255)
+	DECLARE @contreindic VARCHAR(255)
+	DECLARE @amm VARCHAR(10)
+	DECLARE @famille VARCHAR(3)
+
+	SELECT @famille = FAM_CODE_MEDICAMENT FROM inserted
+		IF NOT EXISTS (SELECT 1 FROM FAMILLE WHERE FAM_CODE = @famille)
+	BEGIN
+		RAISERROR('La famille spécifiée n''existe pas dans la table FAMILLE.', 16, 1)
+		RETURN;
+	END
+
+	INSERT INTO MEDICAMENT(MED_DEPOTLEGAL, MED_NOMCOMMERCIAL, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_AMM, FAM_CODE_MEDICAMENT) VALUES(@depotlegal, @nomcommercial, @composition, @effets, @contreindic, @amm, @famille)
+END
+GO
+
+Evenement : Avant insertion de medicament
+Condition : Si la famille existe bien
+Action : Ajouter le medicament
