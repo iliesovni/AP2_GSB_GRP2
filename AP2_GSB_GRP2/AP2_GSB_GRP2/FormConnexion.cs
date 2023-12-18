@@ -30,7 +30,7 @@ namespace AP2_GSB_GRP2
         {
             // A REFAIRE AVEC UNE PROCEDURE
             // Chaîne de connexion à la BDD
-            Connexion uneConnexion = new Connexion("BTS2022-24\\SQLEXPRESS01", "GSB_gesAMM");
+            Connexion uneConnexion = new Connexion("DESKTOP-41R7HMR\\SQLEXPRESS", "GSB_gesAMM");
 
             // Création d'un requête
             string requete = "SELECT NOM, MOT_DE_PASSE FROM UTILISATEUR";
@@ -70,6 +70,7 @@ namespace AP2_GSB_GRP2
                 MessageBox.Show("Connexion effectuée", "Message : Authentification réussie !", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 // On affiche le menu et on ferme cette form
                 Menu maFormMenu = new Menu();
+                maFormMenu.Show();
                 // Display the new form.  
 
                 FormConnexion laFormCo = new FormConnexion();

@@ -21,6 +21,54 @@ namespace AP2_GSB_GRP2
 
         private void LV_Famille_Autorises_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void NbMedicamentsAutorisesParFamille_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTN_Quitter_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NbMedicamentsAutorisesParFamille_Load_1(object sender, EventArgs e)
+        {            LV_Famille_Autorises.Items.Clear();
+            string connstring = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj";
+            SqlConnection con = new SqlConnection(connstring);
+            con.Open();
+
+            SqlCommand updateCmd = new SqlCommand("MiseAJourNombreMedicaments", con);
+            updateCmd.CommandType = CommandType.StoredProcedure;
+            updateCmd.ExecuteNonQuery();
+
+            string query = "Select FAM_CODE, FAM_LIBELLE, FAM_NB_MED_AMM from FAMILLE;";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ListViewItem lvi = new ListViewItem(reader.GetValue(0).ToString());
+                lvi.SubItems.Add(reader.GetValue(1).ToString());
+                lvi.SubItems.Add(reader.GetValue(2).ToString());
+                LV_Famille_Autorises.Items.Add(lvi);
+            }
+            con.Close();
+        }
+
+        private void LV_Famille_Autorises_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LV_Famille_Autorises_Click(object sender, EventArgs e)
+        {
             if (LV_Famille_Autorises.SelectedItems.Count > 0)
             {
                 LV_Medicaments_Autorises.Items.Clear();
@@ -46,54 +94,20 @@ namespace AP2_GSB_GRP2
                     int resultat = Convert.ToInt32(verifCmd.Parameters["@Resultat"].Value);
 
                     if (resultat == 1)
-                    { 
-                    ListViewItem lvi = new ListViewItem(reader.GetValue(0).ToString());
-                    lvi.SubItems.Add(reader.GetValue(1).ToString());
-                    lvi.SubItems.Add(reader.GetValue(6).ToString());
-                    LV_Medicaments_Autorises.Items.Add(lvi);
+                    {
+                        ListViewItem lvi = new ListViewItem(reader.GetValue(0).ToString());
+                        lvi.SubItems.Add(reader.GetValue(1).ToString());
+                        lvi.SubItems.Add(reader.GetValue(6).ToString());
+                        LV_Medicaments_Autorises.Items.Add(lvi);
                     }
                 }
                 con.Close();
             }
         }
 
-        private void NbMedicamentsAutorisesParFamille_Load(object sender, EventArgs e)
+        private void BTN_Quitter_Click_1(object sender, EventArgs e)
         {
-            LV_Famille_Autorises.Items.Clear();
-            string connstring = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj";
-            SqlConnection con = new SqlConnection(connstring);
-            con.Open();
-
-            SqlCommand updateCmd = new SqlCommand("MiseAJourNombreMedicaments", con);
-            updateCmd.CommandType = CommandType.StoredProcedure;
-            updateCmd.ExecuteNonQuery();
-
-            string query = "Select FAM_CODE, FAM_LIBELLE, FAM_NB_MED_AMM from FAMILLE;";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while(reader.Read())
-            {
-                ListViewItem lvi = new ListViewItem(reader.GetValue(0).ToString());
-                lvi.SubItems.Add(reader.GetValue(1).ToString());
-                lvi.SubItems.Add(reader.GetValue(2).ToString());
-                LV_Famille_Autorises.Items.Add(lvi);
-            }
-            con.Close();
+            this.Close();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BTN_Quitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void NbMedicamentsAutorisesParFamille_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
