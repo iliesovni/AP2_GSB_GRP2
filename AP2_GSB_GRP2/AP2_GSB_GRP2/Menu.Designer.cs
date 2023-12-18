@@ -36,6 +36,7 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +98,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-7, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(141, 82);
@@ -115,12 +116,23 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Menu GSB";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(342, 343);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 34);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Saisir une décision";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(950, 537);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnQuitter);
@@ -128,6 +140,7 @@
             this.Controls.Add(this.btnNbMedicamentsAutoriserParFamille);
             this.Controls.Add(this.btnFormConsultationWorkflowMedicament);
             this.Controls.Add(this.btnAjoutMedicament);
+            this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Menu";
             this.Text = "Menu";
@@ -147,5 +160,6 @@
         private Button btnQuitter;
         private PictureBox pictureBox1;
         private Label label1;
+        private Button button1;
     }
 }

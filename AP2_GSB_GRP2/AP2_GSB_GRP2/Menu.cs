@@ -50,5 +50,14 @@ namespace AP2_GSB_GRP2
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormSaisirDecision maForm = new FormSaisirDecision();
+            maForm.Show();
+                
+             
+
+        }
     }
 }

@@ -77,9 +77,7 @@ namespace AP2_GSB_GRP2
                 // On affiche le menu et on ferme cette form
                 Menu maFormMenu = new Menu();
                 maFormMenu.Show();
-                maFormMenu.MdiParent = this;
                 // Display the new form.  
-                maFormMenu.Show();
 
                 FormConnexion laFormCo = new FormConnexion();
                 laFormCo.Close();
