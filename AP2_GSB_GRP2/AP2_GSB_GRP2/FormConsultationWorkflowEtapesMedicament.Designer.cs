@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConsultationWorkflowEtapesMedicament));
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lvMedoc = new System.Windows.Forms.ListView();
@@ -43,6 +44,7 @@
             // 
             // pictureBoxLogo
             // 
+            this.pictureBoxLogo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogo.Image")));
             this.pictureBoxLogo.Location = new System.Drawing.Point(-1, 0);
             this.pictureBoxLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
@@ -74,6 +76,7 @@
             this.lvMedoc.TabIndex = 2;
             this.lvMedoc.UseCompatibleStateImageBehavior = false;
             this.lvMedoc.View = System.Windows.Forms.View.Details;
+            this.lvMedoc.SelectedIndexChanged += new System.EventHandler(this.lvMedoc_SelectedIndexChanged);
             // 
             // columnHeader1
             // 

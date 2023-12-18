@@ -28,133 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PB_LogoValidation = new System.Windows.Forms.PictureBox();
-            this.LV_Medicaments_Validation = new System.Windows.Forms.ListView();
-            this.CH_DepotLegal_LV_MedicamentsValidation = new System.Windows.Forms.ColumnHeader();
-            this.CH_NomCommercial_LV_MedicamentsValidation = new System.Windows.Forms.ColumnHeader();
-            this.CH_CodeFamille_LV_MedicamentsValidation = new System.Windows.Forms.ColumnHeader();
-            this.LV_Etape_Validation = new System.Windows.Forms.ListView();
-            this.CH_DateEtape_LV_EtapeValidation = new System.Windows.Forms.ColumnHeader();
-            this.CH_NumEtape_LV_EtapeValidation = new System.Windows.Forms.ColumnHeader();
-            this.CH_IdDecision_LV_EtapeValidation = new System.Windows.Forms.ColumnHeader();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BTN_Quitter = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoValidation)).BeginInit();
-            this.SuspendLayout();
+            PB_LogoValidation = new PictureBox();
+            LV_Medicaments_Validation = new ListView();
+            CH_DepotLegal_LV_MedicamentsValidation = new ColumnHeader();
+            CH_NomCommercial_LV_MedicamentsValidation = new ColumnHeader();
+            CH_CodeFamille_LV_MedicamentsValidation = new ColumnHeader();
+            LV_Etape_Validation = new ListView();
+            CH_DateEtape_LV_EtapeValidation = new ColumnHeader();
+            CH_NumEtape_LV_EtapeValidation = new ColumnHeader();
+            CH_IdDecision_LV_EtapeValidation = new ColumnHeader();
+            BTN_Quitter = new Button();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)PB_LogoValidation).BeginInit();
+            SuspendLayout();
             // 
             // PB_LogoValidation
             // 
-            this.PB_LogoValidation.Location = new System.Drawing.Point(0, 2);
-            this.PB_LogoValidation.Name = "PB_LogoValidation";
-            this.PB_LogoValidation.Size = new System.Drawing.Size(161, 105);
-            this.PB_LogoValidation.TabIndex = 1;
-            this.PB_LogoValidation.TabStop = false;
+            PB_LogoValidation.Image = Properties.Resources.Logo_GSB;
+            PB_LogoValidation.Location = new Point(0, 2);
+            PB_LogoValidation.Margin = new Padding(3, 2, 3, 2);
+            PB_LogoValidation.Name = "PB_LogoValidation";
+            PB_LogoValidation.Size = new Size(180, 98);
+            PB_LogoValidation.TabIndex = 1;
+            PB_LogoValidation.TabStop = false;
             // 
             // LV_Medicaments_Validation
             // 
-            this.LV_Medicaments_Validation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.CH_DepotLegal_LV_MedicamentsValidation,
-            this.CH_NomCommercial_LV_MedicamentsValidation,
-            this.CH_CodeFamille_LV_MedicamentsValidation});
-            this.LV_Medicaments_Validation.Location = new System.Drawing.Point(46, 138);
-            this.LV_Medicaments_Validation.Name = "LV_Medicaments_Validation";
-            this.LV_Medicaments_Validation.Size = new System.Drawing.Size(414, 347);
-            this.LV_Medicaments_Validation.TabIndex = 5;
-            this.LV_Medicaments_Validation.UseCompatibleStateImageBehavior = false;
-            this.LV_Medicaments_Validation.View = System.Windows.Forms.View.Details;
+            LV_Medicaments_Validation.Columns.AddRange(new ColumnHeader[] { CH_DepotLegal_LV_MedicamentsValidation, CH_NomCommercial_LV_MedicamentsValidation, CH_CodeFamille_LV_MedicamentsValidation });
+            LV_Medicaments_Validation.Location = new Point(40, 104);
+            LV_Medicaments_Validation.Margin = new Padding(3, 2, 3, 2);
+            LV_Medicaments_Validation.Name = "LV_Medicaments_Validation";
+            LV_Medicaments_Validation.Size = new Size(363, 261);
+            LV_Medicaments_Validation.TabIndex = 5;
+            LV_Medicaments_Validation.UseCompatibleStateImageBehavior = false;
+            LV_Medicaments_Validation.View = View.Details;
+            LV_Medicaments_Validation.SelectedIndexChanged += LV_Medicaments_Validation_SelectedIndexChanged;
+            LV_Medicaments_Validation.Click += LV_Medicaments_Validation_Click;
             // 
             // CH_DepotLegal_LV_MedicamentsValidation
             // 
-            this.CH_DepotLegal_LV_MedicamentsValidation.Text = "DepotLegal";
-            this.CH_DepotLegal_LV_MedicamentsValidation.Width = 100;
+            CH_DepotLegal_LV_MedicamentsValidation.Text = "DepotLegal";
+            CH_DepotLegal_LV_MedicamentsValidation.Width = 100;
             // 
             // CH_NomCommercial_LV_MedicamentsValidation
             // 
-            this.CH_NomCommercial_LV_MedicamentsValidation.Text = "NomCommercial";
-            this.CH_NomCommercial_LV_MedicamentsValidation.Width = 130;
+            CH_NomCommercial_LV_MedicamentsValidation.Text = "NomCommercial";
+            CH_NomCommercial_LV_MedicamentsValidation.Width = 130;
             // 
             // CH_CodeFamille_LV_MedicamentsValidation
             // 
-            this.CH_CodeFamille_LV_MedicamentsValidation.Text = "CodeFamille";
-            this.CH_CodeFamille_LV_MedicamentsValidation.Width = 100;
+            CH_CodeFamille_LV_MedicamentsValidation.Text = "CodeFamille";
+            CH_CodeFamille_LV_MedicamentsValidation.Width = 100;
             // 
             // LV_Etape_Validation
             // 
-            this.LV_Etape_Validation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.CH_DateEtape_LV_EtapeValidation,
-            this.CH_NumEtape_LV_EtapeValidation,
-            this.CH_IdDecision_LV_EtapeValidation});
-            this.LV_Etape_Validation.Location = new System.Drawing.Point(514, 138);
-            this.LV_Etape_Validation.Name = "LV_Etape_Validation";
-            this.LV_Etape_Validation.Size = new System.Drawing.Size(414, 347);
-            this.LV_Etape_Validation.TabIndex = 6;
-            this.LV_Etape_Validation.UseCompatibleStateImageBehavior = false;
-            this.LV_Etape_Validation.View = System.Windows.Forms.View.Details;
+            LV_Etape_Validation.Columns.AddRange(new ColumnHeader[] { CH_DateEtape_LV_EtapeValidation, CH_NumEtape_LV_EtapeValidation, CH_IdDecision_LV_EtapeValidation });
+            LV_Etape_Validation.Location = new Point(450, 104);
+            LV_Etape_Validation.Margin = new Padding(3, 2, 3, 2);
+            LV_Etape_Validation.Name = "LV_Etape_Validation";
+            LV_Etape_Validation.Size = new Size(363, 261);
+            LV_Etape_Validation.TabIndex = 6;
+            LV_Etape_Validation.UseCompatibleStateImageBehavior = false;
+            LV_Etape_Validation.View = View.Details;
             // 
             // CH_DateEtape_LV_EtapeValidation
             // 
-            this.CH_DateEtape_LV_EtapeValidation.Text = "Date";
-            this.CH_DateEtape_LV_EtapeValidation.Width = 100;
+            CH_DateEtape_LV_EtapeValidation.Text = "Date";
+            CH_DateEtape_LV_EtapeValidation.Width = 100;
             // 
             // CH_NumEtape_LV_EtapeValidation
             // 
-            this.CH_NumEtape_LV_EtapeValidation.Text = "NumEtape";
-            this.CH_NumEtape_LV_EtapeValidation.Width = 100;
+            CH_NumEtape_LV_EtapeValidation.Text = "NumEtape";
+            CH_NumEtape_LV_EtapeValidation.Width = 100;
             // 
             // CH_IdDecision_LV_EtapeValidation
             // 
-            this.CH_IdDecision_LV_EtapeValidation.Text = "IdDecision";
-            this.CH_IdDecision_LV_EtapeValidation.Width = 100;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 20);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "logo";
+            CH_IdDecision_LV_EtapeValidation.Text = "IdDecision";
+            CH_IdDecision_LV_EtapeValidation.Width = 100;
             // 
             // BTN_Quitter
             // 
-            this.BTN_Quitter.Location = new System.Drawing.Point(834, 491);
-            this.BTN_Quitter.Name = "BTN_Quitter";
-            this.BTN_Quitter.Size = new System.Drawing.Size(94, 29);
-            this.BTN_Quitter.TabIndex = 8;
-            this.BTN_Quitter.Text = "Quitter";
-            this.BTN_Quitter.UseVisualStyleBackColor = true;
-            this.BTN_Quitter.Click += new System.EventHandler(this.BTN_Quitter_Click);
+            BTN_Quitter.Location = new Point(730, 368);
+            BTN_Quitter.Margin = new Padding(3, 2, 3, 2);
+            BTN_Quitter.Name = "BTN_Quitter";
+            BTN_Quitter.Size = new Size(82, 22);
+            BTN_Quitter.TabIndex = 8;
+            BTN_Quitter.Text = "Quitter";
+            BTN_Quitter.UseVisualStyleBackColor = true;
+            BTN_Quitter.Click += BTN_Quitter_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Gill Sans MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(274, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(517, 42);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Médicaments en cours de validation";
+            label2.AutoSize = true;
+            label2.Font = new Font("Gill Sans MT", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.Transparent;
+            label2.Location = new Point(240, 38);
+            label2.Name = "label2";
+            label2.Size = new Size(419, 34);
+            label2.TabIndex = 9;
+            label2.Text = "Médicaments en cours de validation";
             // 
             // MedicamentsEnCoursDeValidation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(974, 531);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.BTN_Quitter);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.LV_Etape_Validation);
-            this.Controls.Add(this.LV_Medicaments_Validation);
-            this.Controls.Add(this.PB_LogoValidation);
-            this.Name = "MedicamentsEnCoursDeValidation";
-            this.Text = "MedicamentsEnCoursDeValidation";
-            ((System.ComponentModel.ISupportInitialize)(this.PB_LogoValidation)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.SteelBlue;
+            ClientSize = new Size(852, 398);
+            Controls.Add(label2);
+            Controls.Add(BTN_Quitter);
+            Controls.Add(LV_Etape_Validation);
+            Controls.Add(LV_Medicaments_Validation);
+            Controls.Add(PB_LogoValidation);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "MedicamentsEnCoursDeValidation";
+            Text = "MedicamentsEnCoursDeValidation";
+            Load += MedicamentsEnCoursDeValidation_Load;
+            ((System.ComponentModel.ISupportInitialize)PB_LogoValidation).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -168,7 +159,6 @@
         private ColumnHeader CH_DateEtape_LV_EtapeValidation;
         private ColumnHeader CH_NumEtape_LV_EtapeValidation;
         private ColumnHeader CH_IdDecision_LV_EtapeValidation;
-        private Label label1;
         private Button BTN_Quitter;
         private Label label2;
     }

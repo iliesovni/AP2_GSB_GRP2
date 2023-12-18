@@ -6,35 +6,35 @@ using System.Threading.Tasks;
 
 namespace AP2_GSB_GRP2
 {
-    internal class Etape
+    internal class Decision
     {
-        private int num;
+        private int id;
         private string libelle;
 
-        public Etape(int leNum, string leLibelle)
+        public Decision(int leId, string leLibelle)
         {
-            this.num = leNum;
+            this.id = leId;
             this.libelle = leLibelle;
         }
 
-        public int getNum()
+        public int getLeId()
         {
-            return this.num;
+            return this.id;
         }
 
-        public string getLibelle()
+        public string getLeLibelle()
         {
             return this.libelle;
         }
 
-        public void setNum(int num)
+        public void setLeId(int leId)
         {
-            this.num = num;
+            this.id = leId;
         }
 
-        public void setLibelle(string libelle)
+        public void setLeLibelle(string leLibelle)
         {
-            this.libelle = libelle;
+            this.libelle = leLibelle;
         }
     }
 }
