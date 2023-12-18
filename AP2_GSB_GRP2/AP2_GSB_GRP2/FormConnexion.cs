@@ -26,9 +26,8 @@ namespace AP2_GSB_GRP2
         private void btnConnecter_Click(object sender, EventArgs e)
         {
             // A REFAIRE AVEC UNE PROCEDURE
-
             // Chaîne de connexion à la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = AP2-GP2; Integrated Security=true";
+            string connexion = "Data Source = DESKTOP-26S0M0E\\SQLEXPRESS; Initial Catalog = GSB_gesAMM; Integrated Security=true";
 
             // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
             SqlConnection con = new SqlConnection(connexion);
@@ -63,6 +62,9 @@ namespace AP2_GSB_GRP2
                 MessageBox.Show("Connexion réussie !");
                 // On affiche le menu et on ferme cette form
                 Menu maFormMenu = new Menu();
+                maFormMenu.Show();
+                maFormMenu.MdiParent = this;
+                // Display the new form.  
                 maFormMenu.Show();
 
                 FormConnexion laFormCo = new FormConnexion();
