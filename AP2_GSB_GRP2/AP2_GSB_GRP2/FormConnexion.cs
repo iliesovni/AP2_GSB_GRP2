@@ -31,7 +31,7 @@ namespace AP2_GSB_GRP2
             // A REFAIRE AVEC UNE PROCEDURE
 
             // Chaîne de connexion à la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
+            string connexion = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj;MultipleActiveResultSets=True";
 
             // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
             SqlConnection con = new SqlConnection(connexion);

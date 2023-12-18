@@ -69,7 +69,7 @@ namespace AP2_GSB_GRP2
 
         private void lvMedoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string leClick = lvMedoc.Items[lvMedoc.FocusedItem.Index].Text;
+            /*string leClick = lvMedoc.Items[lvMedoc.FocusedItem.Index].Text;
 
             lvEtapes.Items.Clear();
             foreach (Workflow E in Globale.lesMedicaments[numLigClic].getLesEtapes())
@@ -80,7 +80,7 @@ namespace AP2_GSB_GRP2
                 ligne.SubItems.Add(E.getDateDecision().ToString());
 
                 lv_med_workflow.Items.Add(ligne);
-            }
+            }*/
         }
     }
 }
