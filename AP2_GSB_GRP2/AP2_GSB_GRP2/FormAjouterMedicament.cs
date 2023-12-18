@@ -87,7 +87,7 @@ namespace AP2_GSB_GRP2
             // Ouverture de la connexion à la BDD
             con.Open();
 
-            
+            // Appel de la fonction 'ajoutMedicament'
             ajoutMedicament(tbFamille.Text.ToString(), tbDepotLegal.Text.ToString(), tbNonCommercial.Text.ToString(), tbComposition.Text.ToString(), tbEffets.Text.ToString(), tbContreIndications.Text.ToString(), tbPrixEchantillon.Text.ToString(), con);
         }
 

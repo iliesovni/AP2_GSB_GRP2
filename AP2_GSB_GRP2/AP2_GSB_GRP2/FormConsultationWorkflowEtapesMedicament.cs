@@ -68,24 +68,32 @@ namespace AP2_GSB_GRP2
        
         private void lvMedoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Chaine de connexion à la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
-            // Initialisation d'une connexion � la BDD � partir de la cha�ne de connexion
-            SqlConnection con = new SqlConnection(connexion);
-            // Ouverture de la connexion à la BDD
-            con.Open();
+           // lvEtapes.Items.Clear();
 
-            string leClick = lvMedoc.Items[lvMedoc.FocusedItem.Index].Text;
-
-            lvEtapes.Items.Clear();
-            foreach (Etape uneEtape in Globale.lesMedicaments[leClick].getLesEtapes(con))
+            if (lvMedoc.SelectedItems.Count > 0)
             {
-                ListViewItem uneLigne = new ListViewItem();
-                uneLigne.Text = uneEtape.getNum().ToString();
-                uneLigne.SubItems.Add(uneEtape.getLibelle());
+                string valeurPremiereColonne = lvMedoc.SelectedItems[0].SubItems[0].Text;
 
-                lvEtapes.Items.Add(uneLigne);
+                string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
+                using (SqlConnection con = new SqlConnection(connexion))
+                {
+                    con.Open();
+
+                    string query = "Select * from ETAPE INNER JOIN DERNIERE_VALIDATION ON ETAPE.ETP_NUM = DERNIERE_VALIDATION.ETP_NUM_DV INNER JOIN ETAPE_NORME ON DERNIERE_VALIDATION.ETP_NUM_DV = ETAPE_NORME.ETP_NUM_NORME WHERE MED_DEPOTLEGAL_DV = '" + valeurPremiereColonne + "';";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@DepotLegal", valeurPremiereColonne);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        ListViewItem lvi = new ListViewItem(reader.GetValue(5).ToString());
+                        lvi.SubItems.Add(reader.GetValue(0).ToString());
+                        lvi.SubItems.Add(reader.GetValue(2).ToString());
+                        lvEtapes.Items.Add(lvi);
+                    }
+                }
             }
+
         }
 
     }
