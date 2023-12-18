@@ -23,7 +23,7 @@ namespace AP2_GSB_GRP2
         {
             this.serverName = serverName;
             this.database = database;
-            this.connection_string = $@"Data Source={this.serverName};Initial Catalog={this.database};Integrated Security=True;MultipleActiveResultSets=True";
+            this.connection_string = $@"Data Source={this.serverName};Initial Catalog={this.database};Integrated Security=True;User Id=DESKTOP-41R7HMR\iliesjaaj;MultipleActiveResultSets=True";
             this.connection = new SqlConnection(this.connection_string);
             this.connection.Open();
         }

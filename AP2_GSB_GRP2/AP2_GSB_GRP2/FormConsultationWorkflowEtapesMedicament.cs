@@ -19,7 +19,7 @@ namespace AP2_GSB_GRP2
             //Globale.lesMedicaments.Clear();
 
             // Cha�ne de connexion à la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
+            string connexion = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj;MultipleActiveResultSets=True";
             // Initialisation d'une connexion � la BDD � partir de la cha�ne de connexion
             SqlConnection con = new SqlConnection(connexion);
             // Ouverture de la connexion à la BDD
@@ -68,13 +68,13 @@ namespace AP2_GSB_GRP2
        
         private void lvMedoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-           // lvEtapes.Items.Clear();
+           lvEtapes.Items.Clear();
 
             if (lvMedoc.SelectedItems.Count > 0)
             {
                 string valeurPremiereColonne = lvMedoc.SelectedItems[0].SubItems[0].Text;
 
-                string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true; User Id=DOMADJ\\medjenid";
+                string connexion = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj;MultipleActiveResultSets=True";
                 using (SqlConnection con = new SqlConnection(connexion))
                 {
                     con.Open();

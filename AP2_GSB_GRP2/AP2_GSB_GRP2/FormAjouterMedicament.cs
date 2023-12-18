@@ -79,7 +79,7 @@ namespace AP2_GSB_GRP2
         private void btnAjouter_Click(object sender, EventArgs e)
         {
             // Chaîne de connexion à la BDD
-            string connexion = "Data Source = BTS2022-24\\SQLEXPRESS01; Initial Catalog = GSB_gesAMM; Integrated Security=true";
+            string connexion = "Data Source = DESKTOP-41R7HMR\\SQLEXPRESS;Initial Catalog=GSB_gesAMM;Integrated Security=true;User Id=DESKTOP-41R7HMR\\iliesjaaj;MultipleActiveResultSets=True";
 
             // Initialisation d'une connexion à la BDD à partir de la chaîne de connexion
             SqlConnection con = new SqlConnection(connexion);
@@ -88,7 +88,7 @@ namespace AP2_GSB_GRP2
             con.Open();
 
             // Appel de la fonction 'ajoutMedicament'
-            ajoutMedicament(tbFamille.Text.ToString(), tbDepotLegal.Text.ToString(), tbNonCommercial.Text.ToString(), tbComposition.Text.ToString(), tbEffets.Text.ToString(), tbContreIndications.Text.ToString(), tbPrixEchantillon.Text.ToString(), con);
+            ajoutMedicament(tbDepotLegal.Text.ToString(), tbNonCommercial.Text.ToString(), tbComposition.Text.ToString(), tbEffets.Text.ToString(), tbContreIndications.Text.ToString(), tbPrixEchantillon.Text.ToString(), tbFamille.Text.ToString(), con);
         }
 
         private void btnAnnuler_Click(object sender, EventArgs e)
